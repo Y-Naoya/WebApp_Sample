@@ -26,7 +26,7 @@ const find = computed(() => props.data.find((v) => v.id === props.id));
       <div>Name: {{ find.name }}</div>
     </template>
     <template v-else>
-      Sorry. We find nothing.
+      Sorry. Not found.
     </template>
     <div class="link">
       <RouterLink :to="{ name: 'home' }">Back</RouterLink>

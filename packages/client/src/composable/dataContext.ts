@@ -1,4 +1,5 @@
 import { ref } from 'vue';
+import { DefaultApi } from 'api-client';
 export interface Data {
   id: number;
   name: string;
@@ -6,20 +7,7 @@ export interface Data {
 export function init() {
   const data = ref<Data[]>([]);
   const fetch = async() => {
-    data.value = [
-      {
-        id: 1,
-        name: 'A'
-      },
-      {
-        id: 2,
-        name: 'B'
-      },
-      {
-        id: 3,
-        name: 'C'
-      },
-    ];
+    data.value = await new DefaultApi().appControllerGetAll();
   };
   return {
     data,

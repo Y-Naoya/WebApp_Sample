@@ -1,3 +1,0 @@
-# TODO
-
-create entity file

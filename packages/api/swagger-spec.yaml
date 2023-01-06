@@ -1,0 +1,36 @@
+openapi: 3.0.0
+paths:
+  /:
+    get:
+      operationId: AppController_getAll
+      parameters: []
+      responses:
+        '201':
+          description: select success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SampleDTO'
+info:
+  title: API example
+  description: Sample API description
+  version: '1.0'
+  contact: {}
+tags:
+  - name: sample
+    description: ''
+servers: []
+components:
+  schemas:
+    SampleDTO:
+      type: object
+      properties:
+        id:
+          type: number
+        name:
+          type: string
+      required:
+        - id
+        - name

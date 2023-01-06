@@ -13,6 +13,10 @@ const routes: RouteRecordRaw[] = [
     component: () => import('../view/SubPage.vue'),
     props: r => ({ id: Number(r.params.id) }),
   },
+  {
+    path: '/:_(.*)*',
+    component: () => import('../view/NotFoundPage.vue'),
+  },
 ];
 
 export const router = createRouter({
